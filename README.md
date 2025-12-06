@@ -21,12 +21,19 @@ They're all in a directory named dos, whose tree looks like this:
     * dosbox
         * Eric the Unready.conf
         * Gateway 2 - Homeworld.conf
+    * common.conf
     * index.txt
     * kitty_fzf_preview
 
 Let's assign the path to that dos directory to an environment variable named DOSROOT.
 
 The c directory is your standard c drive with games installed; the d directory contains CD images.
+
+The common.conf file has settings that I'd want for every game. It contains this:
+
+    [sdl]
+    fullscreen = true
+    vsync = on
 
 My DOSBOX conf file for Eric the Unready, to use as our example, looks like this:
 
@@ -59,7 +66,7 @@ And then I just use the following ~/.local/bin/dosgames script:
     game="$(cat index.txt | fzf --preview='./kitty_fzf_preview boxart/{}.jpg')"
 
     if [[ "$game" != "" ]]; then
-        flatpak run io.github.dosbox-staging -conf "./dosbox/$game.conf"
+        flatpak run io.github.dosbox-staging -conf ./common.conf -conf "./dosbox/$game.conf"
 
         # And this is MRU.
         # https://stackoverflow.com/a/67031431
