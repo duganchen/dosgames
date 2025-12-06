@@ -35,6 +35,9 @@ The common.conf file has settings that I'd want for every game. It contains this
     fullscreen = true
     vsync = on
 
+    [fluidsynth]
+    soundfont = Reality_GMGS_falcomod.sf2
+
 My DOSBOX conf file for Eric the Unready, to use as our example, looks like this:
 
     [cpu]
@@ -85,5 +88,6 @@ As you can see, this uses:
 * [fzf](https://junegunn.github.io/fzf/)
 * DOSBox Staging from FlatHub
 * [kitty](https://sw.kovidgoyal.net/kitty/) (for image previews; I actually use Ghostty).
+* Soundfont from [Falcosoft](https://falcosoft.hu/softwares.html)
 
-The box art is from mobygames.
+The box art is from mobygames. Everything works in FISH, which is what I use.
